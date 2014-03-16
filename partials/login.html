@@ -1,0 +1,57 @@
+
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h1 class="text-center">Login</h1>
+      </div>
+      <div class="modal-body">
+          <form class="form col-md-12 center-block" name="loginForm" class="loginForm" novalidate>
+            <div class="form-group">
+              <input type="text" class="form-control input-lg" placeholder="Användarnamn" name="username" ng-model="username" required><span ng-show="loginForm.username.$dirty && loginForm.username.$invalid">Please enter your username</span>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control input-lg" placeholder="Password" name="password" ng-model="password" ng-minlength="6"><span ng-show="loginForm.password.$dirty && loginForm.password.$invalid">Your password must be at least 6 characters</span>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary btn-lg btn-block" ng-click="loginForm.$valid && sendForm(username,password)">Logga in</button>
+            </div>
+            <label><a href="register">registrera privatperson</a></label>
+            <label><a href="register">registrera företag</a></label>
+          </form>
+      </div>
+      <div class="modal-footer">
+          <div class="col-md-12">
+            <div id="testpersoner">
+
+    <h5>Här är några testpersoner för inlogg:</h5>
+
+    <table>
+      <tr class="heading">
+        <td>Username</td>
+        <td>Password</td>
+      </tr>
+      <tr ng-repeat="user in testPersons">
+        <td> {{ user[0] }} </td>
+        <td> {{ user[1] }} </td>
+        <td><button ng-click="sendForm(user[0],user[1])">Logga in</button></td>
+      </tr>
+    </table>
+    <h5>Företag:</h5>
+    <table>
+      <tr class="heading">
+        <td>Username</td>
+        <td>Password</td>
+      </tr> 
+      <tr ng-repeat="user in testCompanies">
+        <td> {{ user[0] }} </td>
+        <td> {{ user[1] }} </td>
+        <td><button ng-click="sendForm(user[0],user[1])">Logga in</button></td>
+      </tr>
+    </table>
+  </div>
+      </div>  
+      </div>
+  </div>
+  </div>
+
+

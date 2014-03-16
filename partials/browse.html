@@ -1,0 +1,72 @@
+<div class="container">
+  
+  <fieldset class="browse">
+    
+    <label>Sök bland:</label>
+    
+    <br>
+    
+    <input type="radio" name="maincategory" ng-model="req.main" value="advertisement">Annonser</input>
+    <input type="radio" name="maincategory" ng-model="req.main" value="profile">Profiler</input>
+    
+    <br> 
+    
+    <input type="radio" name="profilecategory" ng-model="selection" value="1"
+      ng-click="req.users=['profile_person','profile_company']">Företag och privatpersoner</input>
+    <input type="radio" name="profilecategory" ng-model="selection" value="2"
+      ng-click="req.users=['profile_company']">Endast företag</input> 
+    <input type="radio" name="profilecategory" ng-model="selection" value="3"
+      ng-click="req.users=['profile_person']">Endast privatpersoner</input>
+    
+    <label class="checkbox"><input type="checkbox" ng-model="req.company_tax" value="">Visa endast personer med F-skatt</label>
+    <label class="checkbox"><input type="checkbox" ng-model="req.inactive" value=""> Visa även inaktiva profiler</label>
+    
+    <br>
+    
+    <input type="text" class="form-control" placeholder="sök fritext" ng-model="req.searchText"><br><br>
+
+    <label for="categories">Kompetensområde: </label> 
+    <select class="tags" name="categories" 
+      ng-model="catSelected"
+      ng-change="selectedCategories.push(catSelected)"
+      ng-options="cat as cat for cat in categories">
+      <option value="">Välj</option>
+    </select>
+
+    <label for="tags">Nyckelord: </label>
+    <select class="tags" name="tags" 
+      ng-model="tagSelected"
+      ng-change="selectedTags.push(tagSelected)"
+      ng-options="tag as tag for tag in tags">
+      <option value="">Välj</option>
+    </select>
+
+    <label for="experience">Erfarenhet/år i branchen: </label>
+    <select class="tags" ng-model="req.experience" name="experience">
+      <option value="0" default>Inget krav</option>
+      <option value="1">minst 1 år</option>
+      <option value="3">minst 3 år</option>
+      <option value="5">minst 5 år</option>
+      <option value="10">minst 10 år</option>
+    </select>
+
+    <br><br>
+    <hr>
+    <label class="taglist">Valda kompetensområden: </label>
+      <ul class="taglist"><li class="catcloud" ng-repeat="cat in selectedCategories">{{cat}}</li></ul><br>
+    <label class="taglist">Valda nyckelord: </label>
+      <ul class="taglist"><li class="tagcloud" ng-repeat="tag in selectedTags">{{tag}}</li></ul><br>
+    <hr>
+    <button type="button" class="btn" ng-click="search()">Sök</button>
+
+  </fieldset>
+
+  <hr>
+ <!-- {{ req }} <br> -->  
+  <ul>
+    <li class="browse" ng-repeat="post in result" ng-click="go(req.main + '/' + post.id)"><img class="browse" ng-src="php/{{ post.image || post.image_logo }}"> {{post.name}} <br><br> {{ post.snippet }} </li>
+  </ul>
+
+</div>
+
+

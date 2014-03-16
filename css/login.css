@@ -1,0 +1,56 @@
+
+.loginForm {
+  width:550px;
+}
+
+.loginForm label {
+  width: 130px;
+  margin-right: 15px;
+  text-align: right;
+}
+
+.loginForm input {
+  margin-bottom: 15px;
+}
+
+.loginForm button {
+  /*float: right;*/
+}
+
+.warning {
+  color: red;
+  margin-bottom: 10px;
+}
+
+#testpersoner {
+  width: 450px;
+  margin-top: 30px;
+  border: 1px solid gray;
+  padding: 15px 25px;
+}
+
+#testpersoner h5 {
+  font-weight: bold;
+}
+
+#testpersoner p {
+  font-size: 16px;
+}
+
+#testpersoner span {
+  width: 100px;
+  float: right;
+  text-align: left;
+}
+
+#testpersoner td {
+  width: 200px;
+}
+
+#testpersoner button {
+  float: right;
+}
+.heading {
+  margin: 5px 0;
+  font-weight: bold;
+}

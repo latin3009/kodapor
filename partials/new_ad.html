@@ -1,0 +1,77 @@
+<div class="row" ng-controller='NewAdController'>
+  <div class="container">
+    <div class="col-md-6">
+      <h1>Registrering av nytt annons</h1>
+      <p style='color: red'> Att göra: validering</p>
+        <form name='addAd'>
+          <fieldset>
+            <div class="row block">
+            <label for='nameAd'>Projekt namn: </label>
+            <input type='text' name='namn' class="form-control col-md-4" ng-model="ad.name"  placeholder="Namn" maxlength="60"/></div>
+            <div class="row block">
+            <label for="description">Beskrivning:</label>
+            <textarea name="ad.description" id="" class='col-md-12' rows="5"></textarea>
+            </div>
+            <div class="row block">
+            <label for="kategorier">Välja kategorier:</label>
+              <div class="checkbox">
+                  <label class="checkbox">
+                    <input type="checkbox" ng-model="category.projman"> Project management
+                  </label>
+                </div><!--.checkbox-->
+                <div class="checkbox">
+                  <label class="checkbox">
+                    <input type="checkbox" ng-model="category.webdev"> Webb utveckling
+                  </label>
+                </div><!--.checkbox-->
+                <div class="checkbox">
+                  <label class="checkbox">
+                    <input type="checkbox" ng-model="category.webdes"> Web design
+                  </label>
+                </div><!--.checkbox-->
+                <div class="checkbox">
+                  <label class="checkbox">
+                    <input type="checkbox" ng-model="category.mobapp"> Mobile applikationer
+                  </label>
+                </div><!--.checkbox-->
+            </div>
+            <div class="row block">
+            <label for="location">Välj ort</label>
+            <div class="checkbox">
+                  <label class="checkbox">
+                    <input type="checkbox" ng-model="location.id"> Malmö
+                  </label>
+            </div><!--.checkbox-->
+            <div class="checkbox">
+                  <label class="checkbox">
+                    <input type="checkbox" ng-model="location.id"> Stockholm
+                  </label>
+            </div><!--.checkbox-->
+            <div class="checkbox">
+                  <label class="checkbox">
+                    <input type="checkbox" ng-model="location.id"> Distans
+                  </label>
+            </div><!--.checkbox-->
+            <label for="ort">Annars</label>
+            <input type="text" name='addLocation'>
+            </div>
+            <div class="row block">
+            <label for="duration">Anställning</label>
+            <select class="form-control">
+                <option>tills vidare</option>
+                <option>projekt</option>
+                <option>heltid</option>
+            </select>
+            </div>
+            <div class="row block">
+            <label for="bugdet">Ange er budget:</label>
+            <input type="number">
+            </div>
+            <div class="row block">
+            <button ng-click="save()" class="btn btn-success">Spara</button>
+            </div>
+            </fieldset>
+    </form>
+  </div>
+</div>
+</div>

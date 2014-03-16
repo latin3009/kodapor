@@ -1,0 +1,129 @@
+<body ng-app="formApp" ng-controller="editprofileCtrl">
+
+<div class="row">
+
+  <h1>Edit Profile</h1>
+  <hr>
+ 
+</div>
+  <div class="row">
+    <div class="container">
+  <div class="col-md-6">
+
+
+
+<!-- FORM -->
+  <form ng-submit="putTestPerson()">
+   
+    <img ng-src="php/{{ image }}" class= "profileImage" alt="Responsive image">
+
+  
+
+  
+     <div class= "col-md-12">
+     <h3>Beskrivning</h3>
+        <textarea class= "col-md-12" name="editprofiledescription" rows="5">   {{ user.content }} </textarea>
+    </div>    
+      
+   </div>
+   <div class="col-md-6">
+                    
+           <!-- NAME -->
+    <div id="name-group" class="form-group">
+      <label for='firstname'>Name</label>
+       <p>{{ user.name }}</p> 
+      <input type="text" name="name" class="form-control" placeholder= {{user.name}} ng-model="user.name">
+
+      <span class="help-block"></span>
+    </div>
+
+    <!-- last name -->
+    <div id="lastname-group" class="form-group">
+      <label>Lastname</label>
+      <input type="text" name="lastname" class="form-control" placeholder="user.lastname" ng-model="user.lastname">
+      <span class="help-block"></span>
+    </div>
+
+         
+      <h4>Erfarenhet</h4>
+        <label for='form-control'ng-model="user.experience">Din Erfarenhet i år:</label>
+        <select class="form-control" ng-model="user.experience">
+          <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <div class="block">
+        <h4>Kompetenser:</h4>
+        <!--SKa in fler checkboxes här-->
+         <div class="checkbox"><label>
+                <input type="checkbox"ng-model="user.html5"> Html5
+             </label>
+          </div>
+
+           <div class="checkbox"><label>
+                <input type="checkbox"ng-model="user.css3"> Css3
+             </label>
+          </div>
+
+           <div class="checkbox"><label>
+                <input type="checkbox"ng-model="user.javascript"> JavaScript
+            </div>
+
+           <div class="checkbox"><label>
+                <input type="checkbox"ng-model="user.php"> Php
+             </label>
+           </div>
+
+          <div class="checkbox"><label>
+                <input type="checkbox"ng-model="user.mysql"> MySql
+             </label>
+            </div>
+
+          <div class="checkbox"><label>
+                <input type="checkbox"ng-model="user.pyton"> Pyton
+             </label>
+            </div>
+
+          <div class="checkbox"><label>
+                <input type="checkbox"ng-model="user.visualstudio"> .NET & Visual Studio
+             </label>
+            </div>
+            
+
+         
+        
+      </div>
+       </div>
+     <div class="row">
+     <div class="container">
+     <div class="col-md-8">
+    
+     </div>
+       
+      </div>
+       </div>  
+       <div class="row">
+     <div class="container">
+     <div class="col-md-3 col-md-offset-3">
+           
+           <!-- SUBMIT BUTTON -->
+              <button type="submit" class="btn btn-success btn-lg btn-block">
+                <span class="glyphicon glyphicon-flash"></span> Submit!
+              </button>
+          </div> 
+      </div>
+       </div> 
+<br>
+Data från GET request:
+<br>
+<br>
+
+  </form>
+
+  <!-- SHOW DATA FROM INPUTS AS THEY ARE BEING TYPED -->
+  <pre>
+    {{ user }}
+  </pre>
+

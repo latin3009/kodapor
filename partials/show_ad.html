@@ -1,0 +1,86 @@
+{{ currentAd }}
+ 
+<div class="row" ng-controller='ShowAdController'>
+  <div class="container">
+    <h3>Sök resultat</h3>
+    <p style='color: red'>här vill jag också har filters.</p>
+    <div class="col-md-7 col-md-offset-2">
+      <table id="searchTextResults">
+        <tr ng-repeat='project in results | filter: searchText'>
+          <h4>Project title: Bygga en e-butik{{ project.name }}</h4>
+          <h5>Project category: webb utveckling{{ project.category }}</h5>
+          <span>project id: 234{{ project.id }}</span> |
+          <span>client id: 987{{ project.clientId}}</span>
+          <p>{{ project.tags }}</p>
+          <p class="descr"> Jag har nyss startat eget företag och ska nu välja någon typ av e-handelssida, alltså en sida med kundvagn. Det är bara det att de svenska alternativ som finns oftast är månadshyra, jag skulle hellre vilja köpa en "template" och sköta allt själv.
+Jag har sökt lite på templates men inte hittat något vidare. Jag vill ha en design som sticker ut lite i mängden samtidigt som den ska vara funktionell. Sedan får det inte kosta för mycket, max 10000kr.{{ project.descr }}</p>
+          <p>Ort: Malmö{{ project.location }}</p>
+          <p>Kontakt uppgiftgivare: 070-5677443{{ project.contract }}</p>
+          <p>Placeringsdatum: 11/11/2014{{ project.startDate }}</p>
+          <p>Sista datum: 11/12/2014{{ project.finishDate }}</p>
+          <p class='salary'>Budget: 10.000 sek{{ project.price }}</p>
+          </tr>
+      </table>
+    </div>
+    <div class="col-md-3">
+      <div class="tags">
+        <h5>Tag cloud:</h5>
+        <ul>
+          <li><span class="tag">HTML5</span></li>
+          <li><span class="tag">CSS3</span></li>
+          <li><span class="tag">Javascript</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>  
+    <hr>
+
+<div class="row">
+  <div class="container">
+    <div class="col-md-7 col-md-offset-2">
+      <table id="searchTextResults">
+        <tr ng-repeat='project in results | filter: searchText'>
+          <h4>Project title: Bygga en e-butik{{ project.name }}</h4>
+          <h5>Project category: webb utveckling{{ project.category }}</h5>
+          <span>project id: 234{{ project.id }}</span> |
+          <span>client id: 987{{ project.clientId}}</span>
+          <p>{{ project.tags }}</p>
+          <p class="descr"> Jag har nyss startat eget företag och ska nu välja någon typ av e-handelssida, alltså en sida med kundvagn. Det är bara det att de svenska alternativ som finns oftast är månadshyra, jag skulle hellre vilja köpa en "template" och sköta allt själv.
+Jag har sökt lite på templates men inte hittat något vidare. Jag vill ha en design som sticker ut lite i mängden samtidigt som den ska vara funktionell. Sedan får det inte kosta för mycket, max 10000kr.{{ project.descr }}</p>
+          <p>Ort: Malmö{{ project.location }}</p>
+          <p>Kontakt uppgiftgivare: 070-5677443{{ project.contract }}</p>
+          <p>Placeringsdatum: 11/11/2014{{ project.startDate }}</p>
+          <p>Sista datum: 11/12/2014{{ project.finishDate }}</p>
+          <p class='salary'>Budget: 10.000 sek{{ project.price }}</p>
+          </tr>
+      </table>
+    </div>
+    <div class="col-md-3">
+      <div class="tags">
+        <h5>Tag cloud:</h5>
+        <ul id='tagcloud'>
+          <li><span class="tag">HTML5</span></li>
+          <li><span class="tag">CSS3</span></li>
+          <li><span class="tag">Javascript</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>  
+<div class="row">
+  <div class="container">
+    <div class="col-md-4 col-md-offset-3" >
+    <ul class="pagination">
+        <li class="disabled"><a href="#">«</a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">»</a></li>
+      </ul>
+    </div>
+  </div>
+</div>  
+<hr>
